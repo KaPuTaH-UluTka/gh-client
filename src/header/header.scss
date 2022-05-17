@@ -1,0 +1,21 @@
+.header {
+  background-color: var(--basic-blue);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  &__logo {
+    width: 41px;
+    height: 40px;
+    margin-left: 41px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    &__logo {
+      width: 41px;
+      height: 40px;
+      margin-left: 20px;
+    }
+  }
+}

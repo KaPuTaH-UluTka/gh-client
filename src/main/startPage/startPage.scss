@@ -1,0 +1,23 @@
+.start-page {
+  margin: 220px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  &__img {
+    width: 64px;
+    height: 64px;
+  }
+  p {
+    margin-top: 47px;
+    width: 210px;
+    height: 62px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 22px;
+    color: var(--basic-gray);
+    line-height: 31px;
+  }
+}
