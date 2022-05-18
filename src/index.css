@@ -1,9 +1,27 @@
 :root {
   --basic-blue: #0064EB;
   --basic-gray: #808080;
+  --background-white: #E5E5E5;
+  --white:#FFFFFF;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  margin: 0;
 }

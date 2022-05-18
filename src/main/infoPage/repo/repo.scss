@@ -1,0 +1,17 @@
+.repo-element {
+  margin-top: 24px;
+  padding: 24px 32px;
+  background-color: var(--white);
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--basic-blue);
+  }
+  &__text {
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

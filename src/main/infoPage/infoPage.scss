@@ -1,0 +1,109 @@
+.info-page {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  .profile {
+    margin-top: 11px;
+
+    &__img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+    }
+
+    &__name {
+      margin-top: 29px;
+      font-weight: 800;
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    &__login {
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--basic-blue);
+    }
+
+    &__follows {
+      display: flex;
+      margin-top: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+
+      .followers,
+      .following {
+        display: flex;
+        align-items: center;
+
+        .follows-text {
+          padding: 9px;
+        }
+
+        .follows__icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .following {
+        margin-left: 11px;
+      }
+    }
+  }
+
+  &__repos {
+    margin-left: 85px;
+    .repos-count {
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 42px;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .info-page {
+    flex-direction: column;
+
+    .profile {
+      margin: 11px auto 0;
+    }
+    &__repos {
+      margin: 0 auto;
+      .repos-count {
+        font-weight: 600;
+        font-size: 28px;
+      }
+      .repos-wrapper {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .info-page {
+    .profile {
+      margin: 11px auto 0;
+
+      &__img {
+        margin-left: calc(50% - 120px);
+        width: 240px;
+        height: 240px;
+      }
+
+      &__follows {
+        flex-direction: column;
+
+        .following {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}

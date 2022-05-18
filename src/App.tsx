@@ -11,7 +11,6 @@ function App() {
     <appContext.Provider value={{ userInfo, setUserInfo }}>
       <div className="App">
         <Header />
-
         <Main />
       </div>
     </appContext.Provider>
