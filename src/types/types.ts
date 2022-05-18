@@ -20,19 +20,31 @@ export interface IUser {
   type: string;
   site_admin: boolean;
   name: string;
-  company: string;
+  company: string | null;
   blog: string;
   location: string;
-  email: string;
-  hireable: boolean;
-  bio: string;
-  twitter_username: string;
+  email: string | null;
+  hireable: boolean | null;
+  bio: string | null;
+  twitter_username: string | null;
   public_repos: number;
   public_gists: number;
   followers: number;
   following: number;
   created_at: string;
   updated_at: string;
+  private_gists: number;
+  total_private_repos: number;
+  owned_private_repos: number;
+  disk_usage: number;
+  collaborators: number;
+  two_factor_authentication: boolean;
+  plan: {
+    name: string;
+    space: number;
+    collaborators: number;
+    private_repos: number;
+  };
 }
 
 export interface IRepos {
@@ -42,9 +54,12 @@ export interface IRepos {
   full_name: string;
   template_repository: null;
 }
+
+export interface IUserInfo {
+  profile: IUser | null;
+  repos: IRepos[] | null;
+}
 export interface IContext {
-  user: IUser | null;
-  setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
-  repos: IRepos | null;
-  setRepos: React.Dispatch<React.SetStateAction<IRepos | null>>;
+  userInfo: IUserInfo;
+  setUserInfo: React.Dispatch<React.SetStateAction<IUserInfo>>;
 }
