@@ -6,7 +6,7 @@ const StartPage = () => {
   return (
     <div className={'start-page'}>
       <img className={'start-page__img'} src={SearchPic} alt="searchBig" />
-      <p>Start with searching a GitHub user</p>
+      <p className={'start-page__title'}>Start with searching a GitHub user</p>
     </div>
   );
 };
