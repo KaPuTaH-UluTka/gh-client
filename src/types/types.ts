@@ -23,4 +23,8 @@ export interface IUserInfo {
 export interface IContext {
   userInfo: IUserInfo;
   setUserInfo: React.Dispatch<React.SetStateAction<IUserInfo>>;
+  responseErr: boolean;
+  setResponseErr: React.Dispatch<React.SetStateAction<boolean>>;
+  initialState: boolean;
+  setInitialState: React.Dispatch<React.SetStateAction<boolean>>;
 }

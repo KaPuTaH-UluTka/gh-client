@@ -4,7 +4,7 @@ import { getInfo } from '../../api/api';
 import { appContext } from '../../context/context';
 
 const Search = () => {
-  const { setUserInfo } = useContext(appContext);
+  const { setUserInfo, setResponseErr, setInitialState } = useContext(appContext);
   const refSearchValue: React.RefObject<HTMLInputElement> = React.createRef();
   const [inProgress, setInProgress] = useState(false);
 
@@ -13,8 +13,12 @@ const Search = () => {
     setInProgress(true);
     const user = refSearchValue.current ? refSearchValue.current.value : '';
     const data = await getInfo(user);
+    setInitialState(false);
     if (data) {
+      setResponseErr(false);
       setUserInfo({ profile: data.userInfo, repos: data.reposInfo });
+    } else {
+      setResponseErr(true);
     }
     setInProgress(false);
   }

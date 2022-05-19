@@ -4,7 +4,8 @@ import FollowersPic from '../../assets/followers.svg';
 import FollowingPic from '../../assets/following.svg';
 
 import './infoPage.scss';
-import Repo from './repo/Repo';
+import Repos from './repos/Repos';
+import EmptyRepos from './emptyRepos/EmptyRepos';
 
 const InfoPage = () => {
   return (
@@ -44,12 +45,14 @@ const InfoPage = () => {
                 </div>
               </div>
               <div className="info-page__repos">
-                <p className="repos-count">Repositories ({value.userInfo.repos?.length})</p>
-                <div className="repos-wrapper">
-                  {value.userInfo.repos?.map((e, i) => {
-                    return <Repo key={i} repo={e} />;
-                  })}
-                </div>
+                {value.userInfo.repos && value.userInfo.repos?.length > 0 ? (
+                  <>
+                    <p className="repos-count">Repositories ({value.userInfo.repos?.length})</p>
+                    <Repos repos={value.userInfo.repos} />
+                  </>
+                ) : (
+                  <EmptyRepos />
+                )}
               </div>
             </>
           );

@@ -7,8 +7,20 @@ import { IUserInfo } from './types/types';
 
 function App() {
   const [userInfo, setUserInfo] = useState<IUserInfo>({ profile: null, repos: [] });
+  const [initialState, setInitialState] = useState(true);
+  const [responseErr, setResponseErr] = useState(false);
+
+  const mainState = {
+    userInfo,
+    setUserInfo,
+    responseErr,
+    setResponseErr,
+    initialState,
+    setInitialState,
+  };
+
   return (
-    <appContext.Provider value={{ userInfo, setUserInfo }}>
+    <appContext.Provider value={mainState}>
       <div className="App">
         <Header />
         <Main />

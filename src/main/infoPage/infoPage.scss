@@ -57,6 +57,7 @@
 
   &__repos {
     margin-left: 85px;
+    width: 50%;
     .repos-count {
       font-weight: 800;
       font-size: 32px;
@@ -69,18 +70,16 @@
 @media (max-width: 900px) {
   .info-page {
     flex-direction: column;
-
     .profile {
       margin: 11px auto 0;
     }
     &__repos {
       margin: 0 auto;
+      width: 80%;
       .repos-count {
+        margin: 0 auto;
         font-weight: 600;
         font-size: 28px;
-      }
-      .repos-wrapper {
-        margin-top: 5px;
       }
     }
   }
@@ -101,8 +100,14 @@
         flex-direction: column;
 
         .following {
-          margin-left: 0px;
+          margin-left: 0;
         }
+      }
+    }
+    &__repos {
+      .repos-count {
+        width: 180px;
+        font-size: 22px;
       }
     }
   }
