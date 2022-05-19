@@ -28,6 +28,15 @@
     border: none;
     cursor: pointer;
   }
+
+  .loading {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    background: url('/assets/loader.svg');
+    background-size: 40px 40px;
+    animation: loader 1s;
+  }
 }
 
 @media (max-width: 900px) {
@@ -61,5 +70,18 @@
     &__submit {
       margin-left: -225px;
     }
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: 10px;
   }
 }

@@ -1,14 +1,16 @@
 import React from 'react';
 
 import './repo.scss';
+import { IRepo } from '../../../types/types';
 
-const Repo = () => {
+const Repo = (props: { repo: IRepo }) => {
+  const repo = props.repo;
   return (
     <div className={'repo-element'}>
-      <a className={'repo-element__title'}>react-hot-loader</a>
-      <p className={'repo-element__text'}>
-        Tweak React components in real time. (Deprecated: use Fast Refresh instead.
-      </p>
+      <a href={repo.html_url} target={'_blank'} className={'repo-element__title'} rel="noreferrer">
+        {repo.name}
+      </a>
+      <p className={'repo-element__text'}>{repo.description}</p>
     </div>
   );
 };

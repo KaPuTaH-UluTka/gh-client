@@ -46,10 +46,9 @@ const InfoPage = () => {
               <div className="info-page__repos">
                 <p className="repos-count">Repositories ({value.userInfo.repos?.length})</p>
                 <div className="repos-wrapper">
-                  <Repo />
-                  <Repo />
-                  <Repo />
-                  <Repo />
+                  {value.userInfo.repos?.map((e, i) => {
+                    return <Repo key={i} repo={e} />;
+                  })}
                 </div>
               </div>
             </>
