@@ -1,0 +1,9 @@
+.pagination-counter {
+  margin-right: 22px;
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+    color: var(--basic-gray);
+  }
+}

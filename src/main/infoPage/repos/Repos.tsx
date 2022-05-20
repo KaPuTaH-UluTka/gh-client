@@ -4,6 +4,7 @@ import './repos.scss';
 import { IRepo } from '../../../types/types';
 import EmptyRepos from '../emptyRepos/EmptyRepos';
 import ReactPaginate from 'react-paginate';
+import PaginationPreview from './paginationPreview/PaginationPreview';
 
 const Repos = (props: { repos: IRepo[] }) => {
   const repos = props.repos;
@@ -42,20 +43,23 @@ const Repos = (props: { repos: IRepo[] }) => {
           </div>
         );
       })}
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel=">"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={1}
-        pageCount={pageCount}
-        previousLabel="<"
-        containerClassName={'pagination'}
-        pageLinkClassName={'page-num'}
-        previousLinkClassName={'prev'}
-        nextLinkClassName={'next'}
-        activeLinkClassName={'active-page'}
-      />
+      <div className="pagination-wrapper">
+        <PaginationPreview length={repos.length} itemOffset={itemOffset} />
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel=">"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={2}
+          marginPagesDisplayed={1}
+          pageCount={pageCount}
+          previousLabel="<"
+          containerClassName={'pagination'}
+          pageLinkClassName={'page-num'}
+          previousLinkClassName={'prev'}
+          nextLinkClassName={'next'}
+          activeLinkClassName={'active-page'}
+        />
+      </div>
     </div>
   );
 };
