@@ -8,6 +8,11 @@ import Repos from './repos/Repos';
 import EmptyRepos from './emptyRepos/EmptyRepos';
 
 const InfoPage = () => {
+  function round(num: number) {
+    if (num > 1000) {
+      return (num / 1000).toFixed(1) + 'k';
+    } else return num;
+  }
   return (
     <section className={'info-page'}>
       <appContext.Consumer>
@@ -33,13 +38,17 @@ const InfoPage = () => {
                   <div className="followers">
                     <img src={FollowersPic} className="follows__icon" alt="followers" />
                     <span className="follows-text">
-                      {value.userInfo.profile?.followers} followers
+                      {value.userInfo.profile?.followers &&
+                        round(value.userInfo.profile?.followers)}{' '}
+                      followers
                     </span>
                   </div>
                   <div className="following">
                     <img src={FollowingPic} className="follows__icon" alt="following" />
                     <span className="follows-text">
-                      {value.userInfo.profile?.following} following
+                      {value.userInfo.profile?.following &&
+                        round(value.userInfo.profile?.following)}{' '}
+                      following
                     </span>
                   </div>
                 </div>
